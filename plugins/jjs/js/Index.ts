@@ -1,6 +1,6 @@
-import { getModules } from '@revenge-mod/modules/finders'
-import { withProps } from '@revenge-mod/modules/finders/filters'
-import { instead } from '@revenge-mod/patcher'
+import { getModules } from '@valenced/modules/finders'
+import { withProps } from '@valenced/modules/finders/filters'
+import { instead } from '@valenced/patcher'
 import { porExtenso, MAX, type Lang } from './numbers'
 
 /**
@@ -16,12 +16,15 @@ type SendMessage = (channelId: string, message: any, ...rest: any[]) => any
 const MIN_INTERVALO = 1000 // ms (abaixo disso o Discord aplica rate limit)
 const sleep = (ms: number) => new Promise(r => setTimeout(r, ms))
 
-const semAcento = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+const COM = 'áàâãäéèêëíìîïóòôõöúùûüç'
+const SEM = 'aaaaaeeeeiiiiooooouuuuc'
+const semAcento = (s: string) =>
+    s.toLowerCase().replace(/[áàâãäéèêëíìîïóòôõöúùûüç]/g, c => SEM[COM.indexOf(c)])
 
 function parseArgs(texto: string): Record<string, string> {
     const out: Record<string, string> = {}
     // chave:valor | chave:"valor com espaços"
-    for (const m of texto.matchAll(/([\p{L}_]+):("([^"]*)"|\S+)/gu)) {
+    for (const m of texto.matchAll(/([A-Za-z\u00C0-\u00FF_]+):("([^"]*)"|\S+)/g)) {
         out[semAcento(m[1])] = m[3] ?? m[2]
     }
     return out
