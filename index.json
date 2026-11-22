@@ -35,7 +35,7 @@
       "author": "ibnaltayyib",
       "icon": "ChatIcon",
       "channels": {
-        "latest": "1.0.0"
+        "latest": "1.0.1"
       },
       "versions": {
         "1.0.0": {
@@ -45,6 +45,19 @@
           "dependencies": {
             "revenge.api": {
               "version": ">=1"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        },
+        "1.0.1": {
+          "url": "https://tomazturbano.github.io/ibnaltayyib-revenge-plugins/pool/dev.ibnaltayyib.jjs@1.0.1.zip",
+          "sha256": "40d51a39a8c0e63c0cd13905f9046432c9b4a28aa1c47489238cc1caaaa06dd4",
+          "size": 380,
+          "dependencies": {
+            "revenge.api": {
+              "version": "*"
             },
             "discord": {
               "version": "*"
