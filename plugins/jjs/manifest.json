@@ -5,10 +5,14 @@
     "author": "ibnaltayyib",
     "description": "/jjs inicio:0 fim:5 idioma:pt-br sufixo:\" !\" maiusculas:sim — envia a contagem por extenso, uma mensagem por vez.",
     "icon": "ChatIcon",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "dependencies": {
-        "revenge.api": { "version": ">=1" },
-        "discord": { "version": "*" }
+        "revenge.api": {
+            "version": "*"
+        },
+        "discord": {
+            "version": "*"
+        }
     },
     "dist": {
         "script": "index.js"
