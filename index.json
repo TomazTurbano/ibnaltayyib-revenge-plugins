@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "name": "My Plugin Repository",
+  "description": "Example plugin repository from the Revenge plugin template.",
+  "plugins": {
+    "com.example.themes": {
+      "name": "Example Themes",
+      "description": "Example themes for Revenge.",
+      "author": "Your Name",
+      "channels": {
+        "latest": "1.0.0"
+      },
+      "versions": {
+        "1.0.0": {
+          "url": "https://tomazturbano.github.io/ibnaltayyib-revenge-plugins/pool/com.example.themes@1.0.0.zip",
+          "sha256": "ee68271dc98d3466cc92523580bdfd1a3742513a511bcd5d52d628dabc702324",
+          "size": 91234,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1.2.1 <2"
+            },
+            "discord": {
+              "version": "*"
+            },
+            "revenge.api.themes": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    },
+    "dev.ibnaltayyib.jjs": {
+      "name": "JJS",
+      "description": "/jjs inicio:0 fim:5 idioma:pt-br sufixo:\" !\" maiusculas:sim — envia a contagem por extenso, uma mensagem por vez.",
+      "author": "ibnaltayyib",
+      "icon": "ChatIcon",
+      "channels": {
+        "latest": "1.0.0"
+      },
+      "versions": {
+        "1.0.0": {
+          "url": "https://tomazturbano.github.io/ibnaltayyib-revenge-plugins/pool/dev.ibnaltayyib.jjs@1.0.0.zip",
+          "sha256": "c29a100447b11c9e1981258fbb1f35f5699b31cf3d6b5a9714094130241e712f",
+          "size": 386,
+          "dependencies": {
+            "revenge.api": {
+              "version": ">=1"
+            },
+            "discord": {
+              "version": "*"
+            }
+          }
+        }
+      }
+    }
+  }
+}
